@@ -20,5 +20,17 @@ public class Main {
         Employee employee = em.find(Employee.class, employeeId);
         System.out.println("Empleado encontrado: " + employee);
 
+        System.out.println("---CREACION DE EMPLEADOS---");
+        Employee newEmployee = new Employee();
+        newEmployee.setNombres("Carlos Antonio");
+        newEmployee.setApellidos("Rico Sampedro");
+        newEmployee.setTelefono("555-963");
+        newEmployee.setEmail("carlos@ejemplo.com");
+
+        em.getTransaction().begin();
+        em.persist(newEmployee);
+        em.getTransaction().commit();
+        System.out.println("---NUEVO EMPLEADO---" + '\n' + newEmployee);
+
     }
 }
