@@ -20,7 +20,7 @@ public class Main {
         Employee employee = em.find(Employee.class, employeeId);
         System.out.println("Empleado encontrado: " + employee);
 
-        System.out.println("---CREACION DE EMPLEADOS---");
+        /*System.out.println("---CREACION DE EMPLEADOS---");
         Employee newEmployee = new Employee();
         newEmployee.setNombres("Carlos Antonio");
         newEmployee.setApellidos("Rico Sampedro");
@@ -30,7 +30,20 @@ public class Main {
         em.getTransaction().begin();
         em.persist(newEmployee);
         em.getTransaction().commit();
-        System.out.println("---NUEVO EMPLEADO---" + '\n' + newEmployee);
+        System.out.println("---NUEVO EMPLEADO---" + '\n' + newEmployee);*/
+
+        System.out.println("---ACTULIZAR EMPLEADO---");
+        int employeToUpdateId = 126;
+        Employee employeeToUpdate = em.find(Employee.class, employeToUpdateId);
+        System.out.println("Empleado actual: " + employeeToUpdate);
+        employeeToUpdate.setNombres("Oscar");
+        employeeToUpdate.setApellidos("Rico");
+        employeeToUpdate.setTelefono("720-4231");
+
+        em.getTransaction().begin();
+        em.persist(employeeToUpdate);
+        em.getTransaction().commit();
+        System.out.println("---EMPLEADO ACTULIZADO---" + '\n'+ employeeToUpdate);
 
     }
 }
