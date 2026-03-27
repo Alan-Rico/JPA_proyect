@@ -9,7 +9,7 @@ public class UtilEntity {
     private static final EntityManagerFactory entityManagerFactory = buildEntityManagerFactory();
 
     private static EntityManagerFactory buildEntityManagerFactory() {
-        return Persistence.createEntityManagerFactory("com.alan.entity.Employee");
+        return Persistence.createEntityManagerFactory("MyPersistenceUnit");
     }
 
     public static EntityManager getEntityManager() {
