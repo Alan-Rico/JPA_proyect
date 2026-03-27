@@ -15,5 +15,10 @@ public class Main {
         System.out.println("---LISTANDO TODOS---");
         employees.forEach(System.out::println);
 
+        System.out.println("---BUSCANDO POR ID---");
+        int employeeId = 114;
+        Employee employee = em.find(Employee.class, employeeId);
+        System.out.println("Empleado encontrado: " + employee);
+
     }
 }
